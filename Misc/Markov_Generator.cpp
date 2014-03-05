@@ -1,11 +1,9 @@
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include <stdlib.h> /*rand*/
 #include <deque>
 #include <map>
 #include <vector>
 #include <iostream>
+#include <string>
 using namespace std;
 
 enum {
@@ -70,7 +68,8 @@ int main(void)
 
     build(prefix,cin);
     add(prefix,NONWORD);
-    for(map<Prefix, vector<string> >::const_iterator it = statetab.begin();
+    
+    /*for(map<Prefix, vector<string> >::const_iterator it = statetab.begin();
             it!=statetab.end(); it++)
     {
         Prefix prefix = it->first;
@@ -82,7 +81,7 @@ int main(void)
             cout<<*sit<<" ";
         }
         cout<<endl;
-    }
+    }*/
     generate(nwords);
     return 0;
 }
