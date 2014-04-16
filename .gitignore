@@ -1,0 +1,9 @@
+#ignore the test executives
+a.out
+
+#ignore objects and archives
+*.[oa]
+
+#ignore vim swp and ~
+*~
+*.swp
