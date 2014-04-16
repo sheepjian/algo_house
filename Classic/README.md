@@ -6,6 +6,7 @@ I just follow the mainstream of the introduction book. Since the science and tec
 everyday, two new chapters are added, which I think should be useful to everyone.  
 
 ###Outline
+<<<<<<< HEAD
 - ch1. Sorting 
 - ch2. Elementary Data Structure
 - ch3. Dynamic Programming
@@ -14,5 +15,17 @@ everyday, two new chapters are added, which I think should be useful to everyone
 - ch6. Graph Algorithms
 - ch7. Numerical Algorithms
 - ch8. Machine Learning Algorithms
+=======
+=============================
+
+-ch1. Sorting 
+-ch2. Elementary Data Structure
+-ch3. Dynamic Programming
+-ch4. Greedy Algorithms
+-ch5. Adavance Data Structure
+-ch6. Graph Algorithms
+-ch7. Numerical Algorithms
+-ch8. Machine Learning Algorithms
+>>>>>>> 5029ec3d6e457e55976616ddaa31c86b0708a97f
 
 
