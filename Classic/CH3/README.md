@@ -9,7 +9,7 @@ In mathematics, computer science, economics and bioinformatics, [**dynamic progr
 
 1. *Longest Common Subsequence (LCS) problem*
    - Q: Given two sequences, print the longest subsequence present in both of them.
-     Example:
+         Example:
          LCS for input "ABCDGH" and "AEDFHR" is "ADH" of length 3
          LCS for input "AGGTAB" and  "GXTXAYB" is "GTAB" of length 4
 
