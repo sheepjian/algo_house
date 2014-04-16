@@ -6,7 +6,7 @@ I just follow the mainstream of the introduction book. Since the science and tec
 everyday, two new chapters are added, which I think should be useful to everyone.  
 
 ###Outline
-- ch1. Sorting 
+- ch1. Sorting Algorithm
 - ch2. Elementary Data Structure
 - ch3. Dynamic Programming
 - ch4. Greedy Algorithms
