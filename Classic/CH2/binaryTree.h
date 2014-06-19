@@ -35,11 +35,6 @@ public:
     treeNode* getRoot(){return root;}
 
 
-	//remain to complete
-	//preorderTraversal()
-	//inorderTraversal()
-	//postorderTraversal()
-
 private:
     int size;
 	treeNode* root;
