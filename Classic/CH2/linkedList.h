@@ -22,7 +22,7 @@ struct listNode {
 
 class linkedList{
 public:
-	linkedList(): head(0),size(0){}
+	linkedList(): size(0),head(NULL){}
 	int getSize() {return size;}
 	listNode *getHead() {return head;}
 	void append(int x);
@@ -30,13 +30,20 @@ public:
 	void clear();
 	void printList();
 	~linkedList(){clear();}
+	listNode* getTail();
 private:
 	int size;
 	listNode *head;
-	void insert(int x, listNode* pos);
 	void destroy(listNode* pos);
 };
 
+//front-end crossover insert
 void reorderList(listNode *head);
+
+
+
+
+//find the start of the single loop in the linked list
+listNode *detectCycle(listNode *head);
 
 #endif /* LINKEDLIST_H_ */

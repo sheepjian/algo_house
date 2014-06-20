@@ -10,39 +10,46 @@
 using namespace std;
 
 void linkedList::append(int x) {
-	if (head == NULL)
+	if (head == NULL) {
 		head = new listNode(x);
-	else {
-		insert(x, head);
+		return;
 	}
+
+	listNode* p = head;
+	while (p->next != NULL) {
+		p = p->next;
+	}
+	p->next = new listNode(x);
 }
 
-void linkedList::insert(int x, listNode* pos) {
-	while (pos->next != NULL)
-		pos = pos->next;
+listNode* linkedList::getTail() {
+	listNode* p = head;
+	while (p->next != NULL) {
+		p = p->next;
+	}
+	return p;
 
-	cout<<"insert here "<<pos->val<<endl;
-
-	pos->next = new listNode(x);
 }
 
 listNode* linkedList::search(int x) {
-	listNode* pos = head;
-	while (pos != NULL && pos->val != x)
-		pos = pos->next;
-
-	return pos;
+	int index = 0;
+	listNode* p = head;
+	while (p->val != x && p != NULL) {
+		p = p->next;
+		index++;
+	}
+	cout << "find the node in index: " << index << endl;
+	return p;
 }
 
 void linkedList::printList() {
 	listNode* pos = head;
-	while (pos != NULL)
-	{
-		cout<<pos->val<<" "<<endl;
+	while (pos != NULL) {
+		cout << pos->val << " ";
 		pos = pos->next;
 	}
 
-	cout<<endl;
+	cout << endl;
 }
 
 void linkedList::destroy(listNode* pos) {
@@ -56,7 +63,7 @@ void linkedList::clear() {
 	if (head == NULL)
 		return;
 	destroy(head);
-	cout<<"the list is clear now"<<endl;
+	cout << "the list is clear now" << endl;
 }
 
 void reorderList(listNode *head) {
@@ -66,10 +73,9 @@ void reorderList(listNode *head) {
 	listNode* slowNode = head;
 	listNode* fastNode = head->next;
 
-	while(fastNode!=NULL)
-	{
+	while (fastNode != NULL) {
 		fastNode = fastNode->next;
-		if(fastNode!=NULL)
+		if (fastNode != NULL)
 			fastNode = fastNode->next;
 		else
 			break;
@@ -77,15 +83,13 @@ void reorderList(listNode *head) {
 		slowNode = slowNode->next;
 	}
 
-
 	listNode* anotherHead = slowNode->next;
 	slowNode->next = NULL;
 
 	listNode* pos = anotherHead->next;
 	listNode* lastNode = anotherHead;
 	anotherHead->next = NULL;
-	while(pos!=NULL)
-	{
+	while (pos != NULL) {
 		listNode* tmp = pos->next;
 		pos->next = lastNode;
 		lastNode = pos;
@@ -96,8 +100,7 @@ void reorderList(listNode *head) {
 	listNode* p = head;
 	listNode* q = anotherHead;
 
-	while(q!=NULL)
-	{
+	while (q != NULL) {
 		listNode* nextNode1 = p->next;
 		listNode* nextNode2 = q->next;
 
@@ -107,5 +110,55 @@ void reorderList(listNode *head) {
 		p = nextNode1;
 		q = nextNode2;
 	}
+}
+
+int node_distance(listNode* begin, listNode* end) {
+	int count = 0;
+	listNode* p = begin;
+	while (p != end) {
+		count++;
+		p = p->next;
+	}
+	return count;
+}
+
+listNode *detectCycle(listNode *head) {
+	if (head == NULL || head->next == NULL)
+		return NULL;
+
+	listNode* slow = head;
+	listNode* fast = head->next;
+
+	while (fast != NULL) {
+		fast = fast->next;
+		if (fast != NULL) {
+			if (fast == slow)
+				break;
+			else {
+				slow = slow->next;
+				fast = fast->next;
+			}
+		}
+	}
+
+	if (fast == NULL)
+		return NULL;
+
+	listNode *pos = fast;
+
+	int lastCount = 0;
+	int curCount = 0;
+
+	while (pos != NULL) {
+		curCount = node_distance(head, pos);
+		if (curCount <= lastCount) {
+			break;
+		} else {
+			lastCount = curCount;
+			pos = pos->next;
+		}
+	}
+
+	return pos;
 }
 
