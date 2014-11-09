@@ -1,0 +1,1 @@
+find . -type f -name '*.cpp' -exec sh -c 'g++ -std=c++11 -I. {} -o $(dirname {})/$(basename {} .cpp)' \;
