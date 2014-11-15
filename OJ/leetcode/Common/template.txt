@@ -1,0 +1,29 @@
+/*
+File Name : [FILE_NAME].cpp
+Author: Jerry DENG (jerrydeng.windfly@gmail.com)
+Time: [CREATE_TIME]
+
+Question:
+
+
+Tags: 
+
+
+Answer:
+
+
+*/
+
+#include "Common/Leetcode.h"
+
+class Solution {
+public:
+
+};
+
+
+int main(int argc, char** argv) {
+	Solution sol;
+
+	return 0;
+}
