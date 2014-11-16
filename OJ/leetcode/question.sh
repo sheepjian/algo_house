@@ -14,3 +14,9 @@ if [[ $1 = "create" ]]; then
 		echo "the question already exist"
 	fi
 fi
+
+
+if [[ $1 = "rmall" ]]; then
+	#rm all excutables
+	find . -type f -name '*.cpp' -exec sh -c 'rm $(dirname {})/$(basename {} .cpp)' \;
+fi
