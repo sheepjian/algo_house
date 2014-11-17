@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-I. -std=c++11 
 
-SRC=$(wildcard ./*/*.cpp)
+SRC=$(filter-out ./Common/%.cpp, $(wildcard ./*/*.cpp))
 #FILES=$(notdir $(SRC))
 #OBJS=$(patsubst %.cpp,Obj/%.o,$(FILES) )
 BINS=$(patsubst %.cpp,%,$(SRC) )

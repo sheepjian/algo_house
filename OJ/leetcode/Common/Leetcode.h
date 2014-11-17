@@ -21,6 +21,16 @@ struct ListNode {
 };
 
 
+//Definition for an interval.
+struct Interval {
+	int start;
+    int end;
+    Interval() : start(0), end(0) {}
+    Interval(int s, int e) : start(s), end(e) {}
+ };
+
+
+
 // Transform string to LinkedList
 ListNode* str2LinkedList(char* str, const char sep[]=" ") {
 	char* pch = strtok(str,sep);
