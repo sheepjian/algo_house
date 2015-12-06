@@ -9,6 +9,7 @@
 using namespace std;
 
 struct vertex{
+	// id + cost
 	vector<pair<int,int>> neighbors; 
 	string name;
 	vertex(string s)
@@ -20,7 +21,6 @@ struct vertex{
 class directed_graph
 {
 public:
-	typedef vector<vertex*> vmap;
 	directed_graph();
 	void addVertex(const string&);
 	bool addEdge(int, int, int);
@@ -29,7 +29,7 @@ public:
 private:
 	int numV;
 	int numE;
-	vmap adjVec;
+	vector<vertex*> adjVec;
 };
 
 

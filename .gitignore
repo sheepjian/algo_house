@@ -1,5 +1,6 @@
 #ignore the test executives
 a.out
+.DS_Store
 
 #ignore objects and archives
 *.[oa]
