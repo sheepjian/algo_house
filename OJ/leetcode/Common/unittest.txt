@@ -1,0 +1,14 @@
+/*
+File Name : [FILE_NAME]_test.cpp
+Author: Jerry DENG (jerrydeng.windfly@gmail.com)
+Time: [CREATE_TIME]
+*/
+
+#include "common.h"
+#include "[FILE_NAME]/[FILE_NAME].h"
+#include "gtest/gtest.h"
+
+TEST([FILE_NAME_UPPER], test) {
+    Solution sol;
+
+}
