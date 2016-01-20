@@ -46,7 +46,7 @@ that is binary search.
 
 Go through all data structure: stack, list, !sorted array!... !Binary Search Tree!
 
-*Binary Search Tree*
+**Binary Search Tree**
 
 For nums[i], to find res[i], we can build a BST by using nums[i+1:n]. 
 The result res[j] of num[j] is namely the number of nodes in the left subtree of node j. 

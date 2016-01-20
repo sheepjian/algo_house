@@ -79,15 +79,15 @@ public:
     int countRangeSum(vector<int>& nums, int lower, int upper) {
         int result = 0;
         int n = nums.size();
-        long long affixSum = 0;
+        long long prefixSum = 0;
         BST* tree = new BST();
         tree->insert(0);
         for(int i=0; i<n; i++) {
-            affixSum += nums[i];
-            int top = tree->greaterThan(affixSum-upper-1);
-            int bottom = tree->greaterThan(affixSum-lower);
+            prefixSum += nums[i];
+            int top = tree->greaterThan(prefixSum-upper-1);
+            int bottom = tree->greaterThan(prefixSum-lower);
             result += (top-bottom);
-            tree->insert(affixSum);
+            tree->insert(prefixSum);
         }
         return result;
     }
