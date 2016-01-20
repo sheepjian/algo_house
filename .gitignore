@@ -3,7 +3,7 @@ a.out
 .DS_Store
 
 #ignore objects and archives
-*.[oa]
+*.[oad]
 
 #ignore vim swp and ~
 *~
