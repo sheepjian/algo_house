@@ -32,8 +32,8 @@ all: $(TARGETS)
 $(BUILD_DIR)/%.d : test/%.cpp
 	@set -e; rm -f $@; \
 	$(CXX) $(BUILD_INCLUDE_FLAG) -MM $< > $@.tmp; \
-    @sed 's,\($*\)\.o[ :]*,$(EXE_DIR)\/\1 $@ : ,g' < $@.tmp > $@; \
-    @rm -f $@.tmp
+    sed 's,\($*\)\.o[ :]*,$(EXE_DIR)\/\1 $@ : ,g' < $@.tmp > $@; \
+    rm -f $@.tmp
 
 clean:
 	rm -rf ./$(BUILD_DIR)/* ./$(EXE_DIR)/*

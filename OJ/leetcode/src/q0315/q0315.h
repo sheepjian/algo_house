@@ -12,7 +12,7 @@ public:
     int childCount;
     int dupCount; //duplicate node counter
     int height;
-
+    
     TreeNode(int v) {
         left = NULL;
         right = NULL;
