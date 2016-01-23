@@ -56,20 +56,23 @@ For a matrix mat[1:m, 1:n], the situation in this question is little different.
 There is no commonly accepted *start* and *end*, since it allows node move to four directions without breaking the boundary. (For string, the start always sit on the left side of the end.)
 
 For example, given any two entries a and b.  
+
 In the string case, if a is on the left side of b, and b is not larger than a, 
-we can immediately there is no increasing substring. Then we can find the recursive formula very easily.
+we can immediately there is no increasing substring btween a and b. 
+So we can find the recursive formula very easily.
+
 However, in the matrix case, no matter what is the order between a and b, there may still exist solution.
 There is no simple explicit recursive formula between a and its neighbors.
 
 But we still get something during this thinking process. That is, for an entry a, if all neighbors are no less than a, a is the smallest point in the local area, let us call it trough. Same for an entry b, if all neighbors are no larger than b, b is the largest point in the local area, let us call it peak. 
 
-Now it is easy to find a lemma, for any valid increasing substring in the matrix, the start must be a through, the end must be a peak.
+Now it is easy to find a proposition, for any valid increasing substring in the matrix, the start must be a through, the end must be a peak. It can be proved by contraction.
 
 What does this remind you?
 
 Map, indegree, outdegree, topological sorting, DFS...  
 
-Now we get out the trap of DP. Treat the matrix as a map. Travelle through all unvisited entries by DFS, and record the depth of each visited entry by the maximum of its visited neighbor's depth plus 1. In the end, the largest record will be the result you want.
+Perfect, we get out the trap of matrix, move to a new data structure: MAP. Treat the matrix as a map. Travelle through all unvisited entries by DFS, and record the depth of each visited entry by the maximum of its visited neighbor's depth plus 1. In the end, the largest record will be the result you want.
 
 The time complexity is same as we imagine in the beginning, O(mn).
 
