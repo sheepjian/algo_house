@@ -18,6 +18,7 @@ Return the array [2, 1, 1, 0].
 ### Answer:
 
 **First Try**
+
 Naive case is that you can use two loops to find the answer, 
 the time complexity will be O(n^2).
 
